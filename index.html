@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>template</title>
+    <title>math sprint game</title>
     <!-- fav icon -->
     <link rel="icon" type="image/png" href="img/favicon.png">
     <!-- css -->
@@ -13,9 +13,95 @@
 
 <body>
 
+    <div class="game-container">
 
+        <!-- header -->
+        <div class="header">
+            <h1>math sprint game</h1>
+        </div>
 
+        <!-- splash page -->
+        <div class="card" id="splash-page">
+            <form id="start-form">
+                <div class="selection-container">
+                    <!-- 10 questions radio input -->
+                    <div class="radio-container">
+                        <label for="value-10">10 questions</label>
+                        <input type="radio" name="questions" value="10" id="value-10">
+                        <span class="best-score">
+                            <span>best score</span>
+                            <span class="best-score-value"></span>
+                        </span>
+                    </div>
+                    <!-- 25 questions radio input -->
+                    <div class="radio-container">
+                        <label for="value-25">25 questions</label>
+                        <input type="radio" name="questions" value="25" id="value-25">
+                        <span class="best-score">
+                            <span>best score</span>
+                            <span class="best-score-value"></span>
+                        </span>
+                    </div>
+                    <!-- 50 questions radio input -->
+                    <div class="radio-container">
+                        <label for="value-50">50 questions</label>
+                        <input type="radio" name="questions" value="50" id="value-50">
+                        <span class="best-score">
+                            <span>best score</span>
+                            <span class="best-score-value"></span>
+                        </span>
+                    </div>
+                    <!-- 99 questions radio input -->
+                    <div class="radio-container">
+                        <label for="value-99">99 questions</label>
+                        <input type="radio" name="questions" value="99" id="value-99">
+                        <span class="best-score">
+                            <span>best score</span>
+                            <span class="best-score-value"></span>
+                        </span>
+                    </div>
+                </div>
+                <!-- start button -->
+                <div class="selection-footer">
+                    <button class="start" type="submit">start round</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- countdown page -->
+        <div class="card" id="countdown-page" hidden>
+            <h1 class="countdown">3</h1>
+        </div>
+
+        <!-- game page -->
+        <div class="card" id="game-page" hidden>
+            <!-- item container -->
+            <div class="item-container"></div>
+            <!-- right or wrong buttons -->
+            <div class="item-footer">
+                <button class="wrong" onclick="select(false)">wrong</button>
+                <button class="right" onclick="select(true)">right</button>
+            </div>
+        </div>
+
+        <!-- score Page -->
+        <div class="card" id="score-page" hidden>
+            <!-- score Container -->
+            <div class="score-container">
+                <h1 class="title">your Time</h1>
+                <h1 class="final-time"></h1>
+                <h1 class="base-time"></h1>
+                <h1 class="penalty-time"></h1>
+            </div>
+            <!-- play again button -->
+            <div class="score-footer">
+                <button class="play-again" onclick="playAgain()" hidden>play again</button>
+            </div>
+        </div>
+
+    </div>
     <!-- script -->
+    <script src="shuffle.js"></script>
     <script src="script.js"></script>
 </body>
 
